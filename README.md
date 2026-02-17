@@ -13,5 +13,3 @@ url: https://playwright.dev/docs/intro
 ```shell
 npm init playwright@latest
 ```
-
-# Explore other branches

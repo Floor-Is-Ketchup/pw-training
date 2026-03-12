@@ -13,9 +13,12 @@ test('has title', async ({ page }) => {
 test('get started link', async ({ page }) => {
   await page.goto('https://travels.praegus.nl/');
 
-  //TODO: add recorded logic to test adding a new campsite
+  // TODO: add recorded test logic to test adding a new campsite
+  //    Either use the options in the "Testing" tab or npx playwright codegen <url> command
+  //    https://playwright.dev/docs/codegen
 
 });
 
-
-//TODO: After finishing this excercise, also rename the example.spec.ts file to something more fitting
+// TODO: After finishing this excercise, also rename the example.spec.ts file to something more fitting
+// Bonus: read more about writing your first tests here: 
+//    https://playwright.dev/docs/writing-tests

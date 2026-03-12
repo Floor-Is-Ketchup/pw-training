@@ -19,7 +19,7 @@ test("get started link", async ({ page }) => {
   // TODO: call the function here, with the right argument, to make the test pass again
   await page.getByRole('button', { name: 'Create Campsite' }).click();
 
-  //Bonus: change the following line to "expect" the same thing to be visible, instead of clicking it.
+  // Bonus: change the following line to "expect" the same thing to be visible, instead of clicking it.
   await page.getByText('Campsite created successfully').click();
 });
 

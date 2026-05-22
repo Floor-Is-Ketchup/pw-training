@@ -1,5 +1,7 @@
+# assignment 3: imports
+
 In this module we are taking a look at importing from other files.
 
-work with importing:
-    - data (from a .json file)
-    - variable(s) and function(s) (from a utils.ts file)
+- import variable(s) from another file
+- export/import function from another file
+- work with imported data

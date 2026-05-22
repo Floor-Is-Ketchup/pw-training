@@ -13,9 +13,11 @@ test("has title", async ({ page }) => {
 //       Now move the fillCampsiteFields function on line 23 to the utils.ts file and export it.
 //       Then import it at the top of this file and make sure the test still passes.
 test("add campsite", async ({ page }) => {
-  await page.goto("https://travels.praegus.nl/");
+  await page.goto(url);
   await page.getByRole("link", { name: "List Your Campsite" }).click();
+
   await fillCampsiteFields(page, campsiteData);
+  
   await page.getByRole("button", { name: "Create Campsite" }).click();
   await expect(page.getByText("Campsite created successfully")).toBeVisible();
 });

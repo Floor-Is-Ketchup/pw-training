@@ -26,7 +26,7 @@ export class NewCampsitePage {
       name: "Price per Night ($) *",
     });
     this.capacity = page.getByRole("spinbutton", {
-      name: "Price per Night ($) *",
+      name: "capacity",
     });
     this.accessibilityLevel = page.getByLabel("Accessibility Level *");
     this.createCampsite = page.getByRole("button", { name: "Create Campsite" })

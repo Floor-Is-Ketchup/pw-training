@@ -6,15 +6,13 @@ export enum NavOption {
   AddCampsite = "Add Campsite",
 }
 
-export class basePage {
+export class BasePage {
   readonly page: Page;
-  readonly getStartedLink: Locator;
   readonly baseUrl: string;
 
   constructor(page: Page) {
     this.page = page;
-    this.baseUrl = "https://travels.praegus.nl/";
-    this.getStartedLink = page.locator("a", { hasText: "Get started" });
+    this.baseUrl = "https://travels.praegus.nl";
   }
 
   async clickLink(text: string) {

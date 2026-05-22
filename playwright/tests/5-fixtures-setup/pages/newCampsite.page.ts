@@ -1,6 +1,7 @@
 import { type Locator, type Page } from "@playwright/test";
+import { BasePage } from "./base.page";
 
-export class NewCampsitePage {
+export class NewCampsitePage extends BasePage {
   readonly page: Page;
   readonly getStartedLink: Locator;
   readonly url: string;
@@ -11,11 +12,12 @@ export class NewCampsitePage {
   readonly pricePerNight: Locator;
   readonly capacity: Locator;
   readonly accessibilityLevel: Locator;
-  readonly createCampsite: Locator
+  readonly createCampsite: Locator;
 
   constructor(page: Page) {
+    super(page); // notation to extend
     this.page = page;
-    this.url = "https://travels.praegus.nl/campsites/new";
+    this.url = `${this.baseUrl}/campsites/new`;
     this.getStartedLink = page.locator("a", { hasText: "Get started" });
     this.name = page.getByRole("textbox", { name: "Name *" });
     this.location = page.getByRole("textbox", { name: "Location *" });
@@ -25,10 +27,10 @@ export class NewCampsitePage {
       name: "Price per Night ($) *",
     });
     this.capacity = page.getByRole("spinbutton", {
-      name: "Price per Night ($) *",
+      name: "capacity",
     });
     this.accessibilityLevel = page.getByLabel("Accessibility Level *");
-    this.createCampsite = page.getByRole("button", { name: "Create Campsite" })
+    this.createCampsite = page.getByRole("button", { name: "Create Campsite" });
   }
 
   async goto() {

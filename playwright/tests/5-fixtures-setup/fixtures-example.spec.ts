@@ -9,7 +9,7 @@ import campsiteData from "./data/campsite_data.json";
 test.describe("actual tests", () => {
 
   test.beforeEach("test setup", async ({ newCP }) => {
-    newCP.goto()
+    await newCP.goto()
   });
 
   test("add campsite", async ({ newCP, page }) => {
@@ -23,7 +23,7 @@ test.describe("actual tests", () => {
   });
 
   test("check title", async({ newCP }) => {
-    await expect(newCP.page).toHaveTitle(/Praegus Travels/)
+    await expect(newCP.page).toHaveTitle(/Praegus Travels/, {timeout: 5000})
   })
 });
 

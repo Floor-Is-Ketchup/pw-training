@@ -9,10 +9,11 @@ test("has title", async ({ page }) => {
   await expect(page).toHaveTitle(/Praegus Travels/);
 });
 
-// TODO: Move the fillCampsiteFields function in the utils.ts and import it at the top of this file
-//       Then make sure the test still passes
+// TODO: Make sure the test passes by running it before making any adjustments.
+//       Now move the fillCampsiteFields function on line 23 to the utils.ts file and export it.
+//       Then import it at the top of this file and make sure the test still passes.
 test("add campsite", async ({ page }) => {
-  await page.goto(url);
+  await page.goto("https://travels.praegus.nl/");
   await page.getByRole("link", { name: "List Your Campsite" }).click();
   await fillCampsiteFields(page, campsiteData);
   await page.getByRole("button", { name: "Create Campsite" }).click();
@@ -38,16 +39,16 @@ async function fillCampsiteFields(page: Page, data: any) {
 /*
 Bonus 1:
 Making the "add campsite" test more specific
-- add a const variable to the utils.ts file called "newCampsiteUrl"
-- declare the value with the url for adding a new campsite
-- import it in this file
-- use it in the "add campsite" test to reduce the number of actions required
+- add and export a const variable to the utils.ts file called "newCampsiteUrl"
+- declare the value with the url for adding a new campsite (ends in /new)
+- import the newly added variable in this file
+- use it to replace the first 2 lines in the "add campsite" test and make sure the test passes.
 
-Bonus2:
+Bonus 2:
 Making the "add campsite" test more complete
 - Look at the data being imported from campsite_data.json
 - Look at which data is being used by the "fillCampsiteFields" function
-- Choose any number of unused data:
-  - Extend the current "fillCampsiteFields" function in utils.ts to also fill in that data
+- Choose any number of unused data fields:
+  - Extend the current "fillCampsiteFields" function (that you moved to utils.ts) to also fill in those fields
   - Use Playwright (codegen, or Testing tab) to find your locators
 */

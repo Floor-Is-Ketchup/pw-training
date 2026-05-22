@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from "@playwright/test";
+import { type Locator, type Page } from "@playwright/test";
 
 export class NewCampsitePage {
   readonly page: Page;
@@ -12,6 +12,7 @@ export class NewCampsitePage {
   readonly capacity: Locator;
   readonly accessibilityLevel: Locator;
   readonly createCampsite: Locator
+  // TODO: Add variables amenities, description and imageUrl here
 
   constructor(page: Page) {
     this.page = page;
@@ -29,6 +30,7 @@ export class NewCampsitePage {
     });
     this.accessibilityLevel = page.getByLabel("Accessibility Level *");
     this.createCampsite = page.getByRole("button", { name: "Create Campsite" })
+    // TODO: Set the variables amenities, description and imageUrl here
   }
 
   async goto() {
@@ -43,5 +45,6 @@ export class NewCampsitePage {
     await this.pricePerNight.fill(data.pricePerNight);
     await this.capacity.fill(data.capacity);
     await this.accessibilityLevel.selectOption(data.accessibilityLevel);
+    // TODO: fill in amenities, description and imageUrl here
   }
 }
